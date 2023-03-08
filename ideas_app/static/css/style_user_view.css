@@ -1,0 +1,47 @@
+*{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.nav-title{
+    color: white;
+    text-align: center;
+}
+nav{
+    background-color: rgb(48, 103, 139);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 1200px;
+    height: 60px;
+    margin: auto;
+}
+
+.boton{
+    background-color: rgb(48, 103, 139);
+    padding: 3px 5px 3px 5px;
+    /* font-family: cursive; */
+    color: white;
+    font-size: 17px;
+    border: 1px solid white;
+    
+}
+.caja_ideas{
+    display: flex;
+}
+.contenedor{
+    width: 1200px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 1px solid gray;
+    border-radius: 20px;
+}
+.contenedor_interno{
+    padding: 30px;
+}
+.card_container{
+    width: 1200px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}

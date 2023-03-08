@@ -1,0 +1,84 @@
+*{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.nav-title{
+    color: white;
+    text-align: center;
+}
+nav{
+    background-color: rgb(48, 103, 139);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1200px;
+    height: 60px;
+    margin: auto;
+}
+li{
+    list-style: none; /*elimina las viñetas de la lista*/
+    margin-left: 15px;
+}
+.boton{
+    background-color: rgb(48, 103, 139);
+    padding: 3px 5px 3px 5px;
+    /* font-family: cursive; */
+    color: white;
+    font-size: 17px;
+    border: 1px solid white;
+    margin-left: 550px;
+}
+.caja_ideas{
+    display: flex;
+}
+.contenedor{
+    width: 1200px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#input_idea{
+    width: 500px;
+}
+.btn_submit_idea{
+    background-color: rgb(48, 103, 139);
+    padding: 3px 5px 3px 5px;
+    /* font-family: cursive; */
+    color: white;
+    font-size: 17px;
+    border: 1px solid white;
+    margin-left: 25px;
+}
+.card_container{
+    width: 1200px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.me_gusta_gris{
+    color: gray;
+    text-decoration: none;
+}
+.me_gusta_azul{
+    color: rgb(45, 90, 240);
+    text-decoration: none;
+}
+.no_me_gusta_gris{
+    color: gray;
+    text-decoration: none;
+}
+.no_me_gusta_azul{
+    color: rgb(33, 166, 255);
+    text-decoration: none;
+}
+.cantidad_de_likes{
+    color: rgb(80, 183, 252);
+    text-decoration: none;
+}
+.eliminar{
+    color: rgb(255, 99, 99);
+    text-decoration: none;
+}
+.alias{
+    text-decoration: none;
+}

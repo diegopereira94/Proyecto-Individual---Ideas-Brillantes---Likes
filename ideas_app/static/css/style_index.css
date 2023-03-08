@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+}
+h2{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.flex_container{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+    
+}
+#btn_submit{
+    margin-top: 20px;
+}
+.card{
+    margin-top: 50px;
+}
+.caja{
+    border-radius: 20px;
+    background-color: gray;
+}
+.formulario{
+    margin-top: 50px;
+}
+.lista_dojo{
+    text-align: center;
+    color: yellow;
+    text-decoration:none;
+}
+.tabla{
+    display: flex;
+    justify-content: center;
+    
+}
+.tabla_contend{
+    width: 1000px;
+}
+#logout-button {
+    background-color: #ff0000; /* color de fondo del botón */
+    color: #fff; /* color del texto en el botón */
+    padding: 5px 10px; /* espaciado interno del botón */
+    margin-right: 10px;
+}

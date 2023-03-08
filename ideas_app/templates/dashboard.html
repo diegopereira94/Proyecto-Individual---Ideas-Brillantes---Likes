@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style_dashboard.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/fontawesome-free/css/all.min.css')}}">
+    
+    <title>Document</title>
+</head>
+<body>
+        <nav>
+            <h3 class="nav-title">Hola {{user_logueado.first_name}} {{user_logueado.last_name}}</h3>
+            <a class="btn btn-outline-danger my-2 my-sm-0 boton" href="{{url_for('logout')}}">Cerrar Sesión</a>
+        </nav>
+
+        <div class="contenedor">
+            <form action="{{url_for('add_new_post')}}" method="POST">
+                {% with messages = get_flashed_messages(category_filter=['post']) %}
+                    {% if messages %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for message in messages %}
+                                <p>{{message}}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endwith %}
+                <div class="form-group caja_ideas">
+                    <input type="text" name="description" class="form-control input_idea" placeholder="Postea una idea ingeniosa aquí" required>
+                    <input type="submit" value="Postear Idea" class="btn btn-primary btn-outline-dark btn_submit_idea">
+                </div>
+            </form>
+        </div>
+
+        {% for post in posts %}
+            <div class="card card_container">
+                <h6 class="card-header"> <a href="users/{{post.idUser}}" class="alias">{{post['alias']}}</a> dice:</h6>
+                <div class="card-body">
+                    <p class="card-text">{{ post['description'] }}</p>
+                        <a href="/like/{{post.id}}/{{post.user_id}}" class="me_gusta_gris" id="me_gusta_gris"><i class="fas fa-thumbs-up"></i>Me gusta</a>
+                                {% for like_user in like_by_user %}
+                                    {% if post.id == like_user.post_id %}
+                                    <a href="/like/{{post.id}}/{{post.user_id}}" class="me_gusta_azul"><i class="fas fa-thumbs-up"></i>Me gusta</a>
+                                    {% endif %}
+                                {% endfor %}
+                        {% for likeByPost in Likes_by_post %}
+                            {% if post.id == likeByPost.post_id %}
+                            <a href="/bright_ideas/{{post.id}}" class="cantidad_de_likes"><i class="fas fa-light fa-user-group"></i>A {{ likeByPost.contador }} persona(s) le gusta esto</a>
+                            {% endif %}
+                        {% endfor %}
+
+                    {% if session.user_id == post.user_id %}
+                        <a href="/delete/{{post.id}}" class="eliminar"><i class="fas fa-solid fa-trash"></i>Eliminar</a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+        
+
+
+        
+        <!-- 
+        <div class="card card_container">
+            <h5 class="card-header"> PRUEBA:</h5>
+            <div class="card-body">
+                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <a href="#" class="me_gusta"><i class="fas fa-thumbs-up"></i>Me gusta</a>
+                <a href="#" class="no_me_gusta"><i class="fas fa-regular fa-thumbs-down"></i>No me gusta</a>
+                <a href="#" class="cantidad_de_likes"><i class="fas fa-light fa-user-group"></i>A 5 personas le gusta eso</a>
+            </div>
+        </div>
+        -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
