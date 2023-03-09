@@ -1,4 +1,4 @@
-# PROYECTO LLAMADO 'IDEAS BRILLANTES' HECHO CON FLASCK
+# PROYECTO LLAMADO 'IDEAS BRILLANTES' HECHO CON FLASK
 
 Proyecto realizado en el Bootcamp de Coding Dojo con el fin de poner en práctica los conocimientos adquiridos.
 
